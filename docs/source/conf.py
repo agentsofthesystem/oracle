@@ -6,8 +6,8 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Agents Of The System'
-copyright = '2024, Joshua Reed'
+project = 'Agents of the System'
+copyright = f'2024, {project}'
 author = 'Joshua Reed'
 release = '1.0.0'
 
