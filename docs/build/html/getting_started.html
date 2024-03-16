@@ -46,7 +46,13 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-make-an-account-with-the-architect">Step 1 - Make an account with the Architect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-download-and-install-agent-smith">Step 2 - Download and install Agent Smith</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-run-a-dedicate-game-server">Step 3 - Run a Dedicate Game Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-4-give-control-of-agent-smith-to-the-architect">Step 4 - Give control of Agent Smith to The Architect.</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="architect.html">Architect Web App (Web &amp; Mobile)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent_smith.html">Agent Smith</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting Guides</a></li>
@@ -82,11 +88,165 @@
 <ol class="arabic simple">
 <li><p>Make an account on the Architect.</p></li>
 <li><p>Download and install Agent Smith on the PC of your choice.</p></li>
-<li><p>Select a Dedicated Game Server to run, install and run it.</p></li>
+<li><p>Select a Dedicated Game Server to run, install, and run it.</p></li>
 <li><p>Give control of Agent Smith to The Architect.</p></li>
 </ol>
 <p>Afterwards you can send friend requests, make friend groups, and
 then share Agent Smith instances amongst them.</p>
+<section id="step-1-make-an-account-with-the-architect">
+<h2>Step 1 - Make an account with the Architect<a class="headerlink" href="#step-1-make-an-account-with-the-architect" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Architect is optimized for both a desktop and mobile browser.
+Only A single account is needed for both.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Open a browser and navigate to <a class="reference external" href="https://agentsofthesystem.com/signup">https://agentsofthesystem.com/signup</a></p></li>
+<li><p>Sign up with your email.  If you have already registered, click “Log in here” at the bottom.</p></li>
+</ol>
+</section>
+<section id="step-2-download-and-install-agent-smith">
+<h2>Step 2 - Download and install Agent Smith<a class="headerlink" href="#step-2-download-and-install-agent-smith" title="Link to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>There is an assumption that the user is doing this for the first time.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Windows Defender likes to flag agentsmith.exe as malware even though its not.
+Therefore you’ll have to direct windows to ignore and allow the executable.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Navigate to the Agent Smith <a class="reference external" href="https://github.com/agentsofthesystem/agent-smith/releases">Releases</a>.</p></li>
+<li><p>Releases follow the v[Major].[Minor].[Patch] semantic version.  Be sure that you download
+the most recent version.  The current release or pre-release version will be annotated.</p></li>
+<li><p>Store the executable somewhere, such as your desktop once downloaded.  At this point, windows
+defender may try to delete the file, but you can tell it to allow it. If this happens to you
+then follow <a class="reference external" href="https://pureinfotech.com/allow-blocked-file-app-microsoft-defender-antivirus/">this article</a></p></li>
+<li><p>Double click or right click and “run”.  Agent Smith runs as a system tray application, so it will
+show up in the bottom right of your desktop.  Sometimes windows hides it in the ^ arrow area, but if
+that happens the app can easily be dragged somewhere more accessible.</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/app_tray.png"><img alt="Agent Smith in app tray" class="align-center" src="_images/app_tray.png" style="width: 400px;" /></a>
+</section>
+<section id="step-3-run-a-dedicate-game-server">
+<h2>Step 3 - Run a Dedicate Game Server<a class="headerlink" href="#step-3-run-a-dedicate-game-server" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Have a look at Agent Smith’s supported <a class="reference external" href="https://github.com/agentsofthesystem/agent-smith?tab=readme-ov-file#supported-games">server list</a>.</p></li>
+<li><p>After one is selected, right click on Agent Smith in the system tray.</p></li>
+<li><p>Click “New Game”</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/main_menu_new_game.png"><img alt="New Game Button" class="align-center" src="_images/main_menu_new_game.png" style="width: 200px;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>In the dropdown, find the game server and select it.</p></li>
+<li><p>The arguments list are preset to defaults, but if anything needs to change do so here.
+For example, with vrising one can change the port number the server runs on.</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/new_game_menu.png"><img alt="New Game Install Menu" class="align-center" src="_images/new_game_menu.png" style="width: 500px;" /></a>
+<ol class="arabic simple" start="6">
+<li><p>Click Install.  Agent Smith will notify you when the process starts and finishes.</p></li>
+<li><p>After installation completes, right click the appliation tray again except this time
+hover over “Quick Start/Stop”. Click it! Red means the server is stopped.
+Green means the server is running.</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/main_menu_quick_menu.png"><img alt="Quick Start/Stop" class="align-center" src="_images/main_menu_quick_menu.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="_images/quick_menu_server_offline.png"><img alt="Red - Offline" class="align-center" src="_images/quick_menu_server_offline.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="_images/quick_menu_server_online.png"><img alt="Green - Online" class="align-center" src="_images/quick_menu_server_online.png" style="width: 200px;" /></a>
+</section>
+<section id="step-4-give-control-of-agent-smith-to-the-architect">
+<h2>Step 4 - Give control of Agent Smith to The Architect.<a class="headerlink" href="#step-4-give-control-of-agent-smith-to-the-architect" title="Link to this heading"></a></h2>
+<p>This step creates a connection between Agent Smith and the Architect.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Author intends to streamline this process to minimize the amount of effort
+required in the future.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>There are far too many makes/models of Routers to cover each one.  The user
+will need to know how to open a port for Agent Smith.</p>
+</div>
+<p>To begin with, gather the following information:</p>
+<ol class="arabic simple">
+<li><p>Your Wide Area Network (WAN) IP.  Your ISP assigns this to you and the easiest
+way to get it is by going to <a class="reference external" href="https://whatismyipaddress.com/">https://whatismyipaddress.com/</a> and writing
+it down.  Alternatively, if you have a domain name that points to your IP address
+this is also okay.</p></li>
+<li><p>Agent Smith controls access via Tokens.  Get one by right clicking the tray icon,
+then clicking settings.  On the tokens tab; type in a name and then click “Generate”.
+You will get the opportunity to copy the token down. Do so now and keep it in a safe
+place.</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/settings_tokens_tab.png"><img alt="Generate a Token" class="align-center" src="_images/settings_tokens_tab.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="_images/settings_token_copy_to_clipboard.png"><img alt="Copy Your Token" class="align-center" src="_images/settings_token_copy_to_clipboard.png" style="width: 400px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is a button marked “invalidate”. Clicking it will permanently invalidate the token. Do
+so if you ever need to remove access to a user with the token.</p>
+</div>
+<ol class="arabic" start="3">
+<li><p>Agent Smith safeguards communication to the Architect via use of a reverse proxy server, Nginx.
+The user must generate a self-signed SSL certificate based on the IP/Domain Name from the first
+step.</p>
+<ul class="simple">
+<li><p>Back on the settings menu, go to the Nginx tab.</p></li>
+<li><p>Enter the IP/Domain name desired.</p></li>
+<li><p>Enter a port number desired and type that in; something in the range 4000-9000 would work nicely.</p></li>
+</ul>
+<blockquote>
+<div><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Try to pick a port number that isn’t an even number like 3000. Instead go for something like 2957 where
+all the digits are different.</p>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>Click “Reset SSL certificate”.  Agent Smith will let you know when the process is complete.</p></li>
+</ul>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/settings_nginx.png"><img alt="Generate SSL certificate" class="align-center" src="_images/settings_nginx.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+</ol>
+<blockquote>
+<div><ul>
+<li><p>Copy down the SSL Public certificate by clicking “View Public Key CRT File”.</p>
+<a class="reference internal image-reference" href="_images/settings_copy_ssl_pubkey.png"><img alt="View/Copy SSL certificate" class="align-center" src="_images/settings_copy_ssl_pubkey.png" style="width: 400px;" /></a>
+</li>
+<li><p>Lastly, turn Nginx on by checking the box next to “Nginx On/Off”.</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>Log into your Architect account, and navigate to the <a class="reference external" href="https://agentsofthesystem.com/app/system/agents">Agents Page</a></p></li>
+<li><p>If there are no agents, click “Add an Agent”.</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/architect_agents_page_empty.png"><img alt="Add an Agent" class="align-center" src="_images/architect_agents_page_empty.png" style="width: 400px;" /></a>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>Enter all information acquired from previous steps. However, you can name your agent anything you want!
+Click “Submit” when finished.</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/architect_agents_page_agent_form.png"><img alt="Add agent form." class="align-center" src="_images/architect_agents_page_agent_form.png" style="width: 400px;" /></a>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>Now the Agent is connected to The Architect.</p></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/architect_page_agent_add_success.png"><img alt="Agent successfully added." class="align-center" src="_images/architect_page_agent_add_success.png" style="width: 600px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A green badge saying “Alive” will appear if all is well. If not, head over to the <a class="reference internal" href="troubleshooting.html#troubleshooting-guides"><span class="std std-ref">Troubleshooting Guides</span></a>
+section to sort it out.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To learn more about how to handle/manipulate game servers after this step, head over the section
+about <a class="reference internal" href="architect.html#architect-web-app-web-mobile"><span class="std std-ref">Architect Web App (Web &amp; Mobile)</span></a>.</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+</section>
 </section>
 
 
