@@ -24,7 +24,7 @@ Step 1 - Make an account with the Architect
 Step 2 - Download and install Agent Smith
 -----------------------------------------
 
-.. warning::
+.. note::
    There is an assumption that the user is doing this for the first time.
 
 .. warning::

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security &mdash; Agents of the System 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Design" href="design.html" />
+    <link rel="prev" title="Agent Smith Usage" href="usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Agents of the System
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architect.html">Architect Web App (Web &amp; Mobile)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../agent_smith.html">Agent Smith</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html">Getting Started with Agent Smith</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supported-game-servers.html">Supported Dedicated Game Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html">Agent Smith Usage</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Security</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#best-practices">Best Practices</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#home-network-configuration">Home Network Configuration.</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#security-with-nginx">Security with Nginx</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="design.html">Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer.html">Developer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer.html#development-environment">Development Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer.html#software-development-process">Software Development Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software-code-quality.html">Style Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer-add-game-server.html">Adding a Game Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html">Software Testing &amp; Test Plan</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting Guides</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Agents of the System</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../agent_smith.html">Agent Smith</a></li>
+      <li class="breadcrumb-item active">Security</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/agent_smith/security.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="security">
+<h1>Security<a class="headerlink" href="#security" title="Permalink to this heading"></a></h1>
+<p>True story. While playing around with Agent Smith during development, I opened up a port and gave
+it a hostname and left it running.  In the couple of days which I left it running, a bot found it
+and attacked it.  My machine was compromised because I had the software running in debug mode.
+After that I decided to double down on security posture.</p>
+<p>Security with Agent Smith is handled by Nginx and by some specific settings that I’ve made to secure
+the software:</p>
+<ol class="simple">
+<li><p>First and foremost, I’ve disabled debug mode in the <a class="reference external" href="https://github.com/agentsofthesystem/agent-smith/blob/develop/application/config/config.py">configuration object</a>.</p></li>
+<li><p>For the .\agent-smith.py inside of the GUI <a class="reference external" href="https://github.com/agentsofthesystem/agent-smith/blob/develop/application/gui/launch.py">launch.py</a>, debug mode
+is also disabled.  This script is the one that pyinstaller uses to pacakge AgentSmith for release.</p></li>
+<li><p>Also, inside of <a class="reference external" href="https://github.com/agentsofthesystem/agent-smith/blob/develop/application/gui/launch.py">launch.py</a>, the Flask Server is set to only allow
+connections from the localhost, or 127.0.0.1.</p></li>
+<li><p>Nginx handles all incoming connections.  Check out the “Security with Nginx” section below.</p></li>
+<li><p>I’ve removed all software from AgentSmith that might be used to run any executable.  That way,
+if something was downloaded to your machine, AgentSmith won’t be the mechanism that runs it.</p></li>
+</ol>
+<p>All of that in mind, there is no reason why exposing a home server to the open internet cannot be done
+safely.  Keep in mind that no matter what, your IP will be probed and tested no matter what is done.</p>
+<div class="section" id="best-practices">
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this heading"></a></h2>
+<p>For those of us that like to tinker and change things, please watch out for the following:</p>
+<ol class="simple">
+<li><p>Never ever run agent smith in debug mode and expose it to the open internet.  There is an attack
+that takes advantage of Flask’s /console endpoint to run any python code.</p></li>
+<li><p>Always use HTTPS/SSL to communicate outside of your home network.  If you alter the code to expose
+the Flask Server then you’re taking a risk.</p></li>
+<li><p>A great place to get a dynamic dns address for your home WAN is noip.com</p></li>
+<li><p>Agent Smith is designed to have the ability to change the port used with Nginx.  Use one that isn’t
+a standard port. Pick a random 4-5 digit number! Try to avoid commonly used port numbers.  Here
+is a wiki article on common <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers">port numbers to avoid</a>.</p></li>
+</ol>
+<p>I’ve written the code in such a way that a user must deliberately circumvent it to take the risks
+I’ve described here.  Do so at your own risk.</p>
+<div class="section" id="home-network-configuration">
+<h3>Home Network Configuration.<a class="headerlink" href="#home-network-configuration" title="Permalink to this heading"></a></h3>
+<p>Our home networks are deeply personal and equally unique.  However, here are a couple of recommendations
+that might help:</p>
+<ol class="simple">
+<li><p>If you have a managed switch, segregate the server running agent smith onto its own VLAN.  That
+way, if it ever becomes compromised the machine is isolated from the rest of your home network.</p></li>
+<li><p>Port Forwarding.  If you router supports it, specifically route the port forward to the machine
+hosting Agent Smith instead of any and all on your network.</p></li>
+<li><p>If you have the ability to run an “Intrusion Protection System” then do it.  An extra set of eyes
+never hurt!</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="security-with-nginx">
+<h2>Security with Nginx<a class="headerlink" href="#security-with-nginx" title="Permalink to this heading"></a></h2>
+<p>First and formost, Nginx is a piece of software that functions as a Reverse Proxy.  That means it
+takes incoming requests and routes valid request to an application secured behind itself.  In essense,
+Nginx is used as a “shield” to protect API requests coming to Agent Smith from anywhere.  This section
+will describe what Nginx is doing to protect you.</p>
+<p>The following are tactics used with Nginx to secure:</p>
+<ol class="simple">
+<li><p>SSL/TLS Encryption - Secures communciation so a users’ token cannot be intercepted. It also
+throws off any bots looking for a simple HTTP connetion.</p></li>
+<li><p>HTTPS traffic only.  Nginx actively blocks regular HTTP traffic.</p></li>
+<li><p>Denies the /console route.  This prevents access to the debug route if it was accidentally
+exposed.</p></li>
+<li><p>Limits the number of connetions per incoming IP address.</p></li>
+<li><p>Expects the requestor to know the hostname of the server.  If you don’t then the request is denied.
+This prevents bots scanning random IPs from getting through.</p></li>
+</ol>
+<p>To see how nginx is configured, have a look at the templated <a class="reference external" href="https://github.com/agentsofthesystem/agent-smith/blob/develop/application/config/nginx/nginx.conf.j2">configuration file</a>.</p>
+<p>The author is well aware that there are many more potential safeguards that Nginx might be able
+to employee. If you, the reader, have a suggestion please create an Issue and help implement an
+improvement!</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="usage.html" class="btn btn-neutral float-left" title="Agent Smith Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="design.html" class="btn btn-neutral float-right" title="Design" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Agents of the System.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

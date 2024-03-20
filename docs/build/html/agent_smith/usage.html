@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agent Smith Usage &mdash; Agents of the System 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Security" href="security.html" />
+    <link rel="prev" title="Supported Dedicated Game Servers" href="supported-game-servers.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Agents of the System
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architect.html">Architect Web App (Web &amp; Mobile)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../agent_smith.html">Agent Smith</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html">Getting Started with Agent Smith</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supported-game-servers.html">Supported Dedicated Game Servers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Agent Smith Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#where-to-get-the-software">Where to get the software.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-launch-the-software">How to launch the software.</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#a-word-about-windows">A word about Windows.</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#security-warnings">Security Warnings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#files-and-folders-agent-smith-creates">Files and Folders Agent Smith Creates</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#nginx-info">Nginx Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sqlite-database-info">SQLite Database Info</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#windows-firewall">Windows Firewall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#instructions-to-install-a-game-server">Instructions to install a game server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#instruction-to-start-stop-an-installation">Instruction to start stop an installation.</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#using-the-game-manager-windows">Using the Game Manager windows:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-the-quick-action-menu">Using the Quick Action Menu:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#instructions-to-modify-a-game-server-s-inputs">Instructions to modify a game server’s inputs.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reporting-bugs">Reporting Bugs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design.html">Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer.html">Developer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer.html#development-environment">Development Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer.html#software-development-process">Software Development Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software-code-quality.html">Style Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer-add-game-server.html">Adding a Game Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html">Software Testing &amp; Test Plan</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting Guides</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Agents of the System</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../agent_smith.html">Agent Smith</a></li>
+      <li class="breadcrumb-item active">Agent Smith Usage</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/agent_smith/usage.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="agent-smith-usage">
+<h1>Agent Smith Usage<a class="headerlink" href="#agent-smith-usage" title="Permalink to this heading"></a></h1>
+<p>The area of documention seeks to inform the end user the basics for using Agent Smith, and is not
+intended for a developer.</p>
+<div class="section" id="where-to-get-the-software">
+<h2>Where to get the software.<a class="headerlink" href="#where-to-get-the-software" title="Permalink to this heading"></a></h2>
+<p>Agent Smith is automatically built and packaged each time the main branch updates.  The GitHub
+releases mechanism houses the executable binary.</p>
+<p>In a browser navigate to https://github.com/agentsofthesystem/agent-smith/releases, find the most
+recent release and download “agent-smith.exe” to your machine.</p>
+<p>Verify the checksum of the “agent-smith.exe” file by comparing the computed checksum with the
+value stored in checksum.exe</p>
+<p>Easy way - Open powershell</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Get</span><span class="o">-</span><span class="n">FileHash</span> <span class="o">-</span><span class="n">Algorithm</span> <span class="p">[</span><span class="n">MD5</span><span class="o">|</span><span class="n">SHA1</span><span class="o">|</span><span class="n">SHA256</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">C</span><span class="p">:</span>\<span class="n">Path</span>\<span class="n">To</span>\<span class="n">File</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-launch-the-software">
+<h2>How to launch the software.<a class="headerlink" href="#how-to-launch-the-software" title="Permalink to this heading"></a></h2>
+<p>Once agent-smith.exe is downloaded, move the file to a location that best suits you.  The author
+recommends a place that won’t change and is easily accessible, like your desktop.</p>
+<p>Onces a suitable location, to launch the software simply double-click it to run it.  You’ll be prompted
+that the software is a potential threat, and you’ll have to click “run anyway” to make windows run
+it.</p>
+<p>After Agent Smith has launched, a green agent icon will appear in the bottom right of your screen.
+Right clicking the icon reveals the menu.</p>
+<div class="section" id="a-word-about-windows">
+<h3>A word about Windows.<a class="headerlink" href="#a-word-about-windows" title="Permalink to this heading"></a></h3>
+</div>
+</div>
+<div class="section" id="security-warnings">
+<h2>Security Warnings<a class="headerlink" href="#security-warnings" title="Permalink to this heading"></a></h2>
+<p>Developer creating applications are expected to “digitally sign” executable files so that Windows
+won’t flag it as a potential threat.  However, to sign an executable one has to purchase an expensive
+signing authority and until that expense can be covered, somehow, this warning will continue to happen.
+The author’s opinion is that it’s sad that Windows forces you to pay or makes your software look like
+a threat.  At some point in the future, the goal is to do so due to lack of options.</p>
+<p>Also - Pyinstaller, as great as it is for packaging legitimate python apps in an exe bundle is a fan
+favorite of nefarious people.  As a result, Windows Defender may at time flag this legitimate
+software as malware. You will have to go back into windows defender and tell it to allow the
+executable on your machine.</p>
+</div>
+<div class="section" id="files-and-folders-agent-smith-creates">
+<h2>Files and Folders Agent Smith Creates<a class="headerlink" href="#files-and-folders-agent-smith-creates" title="Permalink to this heading"></a></h2>
+<p>Agent Smith creates the following directory structure:</p>
+<ol class="simple">
+<li><p>games - By default games get installed into this sub-directory. The user may optionally install
+games elsewhere.</p></li>
+<li><p>nginx - All things nginx go into this folder.</p></li>
+<li><p>ssl - The SSL public certificate and private key are stored in this folder.</p></li>
+<li><p>steam - The SteamCMD client is kept in this folder.</p></li>
+<li><p>AgentSmith.db - This is an sqlite database that keeps track of everything that Agent Smith needs.</p></li>
+</ol>
+<p>Here is how the files look on the file system:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>C:.
+├───AgentSmith
+    └───games
+    └───nginx
+        └───nginx-&lt;version&gt;
+        └───nginx-&lt;version&gt;/nginx.exe
+        └───nginx-&lt;version&gt;/logs
+    └───ssl
+    └───steam
+    └───AgentSmith.db
+</pre></div>
+</div>
+<div class="section" id="nginx-info">
+<h3>Nginx Info<a class="headerlink" href="#nginx-info" title="Permalink to this heading"></a></h3>
+<p>As of writing, Agent Smith does not have the ability to change this location or move it.  There are
+useful files in the logs folder.</p>
+<p>There is access.log in the logs folder and it will report any and all HTTP requests that came to your
+Agent Smith.</p>
+<p>There is error.log in the logs folder and it will show any error messagse coming from nginx.exe.</p>
+<p>There is a conf folder, if you mess with nginx.conf the app will not work.  However, feel free to
+view it if interested in how nginx is configured.</p>
+</div>
+<div class="section" id="sqlite-database-info">
+<h3>SQLite Database Info<a class="headerlink" href="#sqlite-database-info" title="Permalink to this heading"></a></h3>
+<p>A word about the sqlite database.  Deleting this file result in Agent Smith recieving a wipe.  You’ll
+be back to a fresh installation, essentially.  Only modify or edit this file if you really know
+what you’re doing.</p>
+</div>
+</div>
+<div class="section" id="windows-firewall">
+<h2>Windows Firewall<a class="headerlink" href="#windows-firewall" title="Permalink to this heading"></a></h2>
+<p>Windows Firewall will always be something to deal with.  Whenever a new game is installed and run
+for the first time, windows will attempt to prompt the user to allow the app through the firewall.
+However, sometimes this automation doesn’t work.  Therefore, it’s important to know how to
+get at least nginx.exe through the firewall.</p>
+<ol class="simple">
+<li><p>Open Start Menu</p></li>
+<li><p>Search “Allow an App through the Windows firewall” and open.</p></li>
+<li><p>Click “Change Settings”</p></li>
+<li><p>If nginx.exe (or whatever app you’re searching for is in the list) is present, skip on to
+step 7.</p></li>
+<li><p>Click “Allow another app” and give it “C:\AgentSmith\nginx\nginx-[nginx ver]\nginx.exe”
+with the browse button.</p></li>
+<li><p>Click Add</p></li>
+<li><p>Check the box for both public and private.</p></li>
+<li><p>Click OK to finish.</p></li>
+</ol>
+</div>
+<div class="section" id="instructions-to-install-a-game-server">
+<h2>Instructions to install a game server<a class="headerlink" href="#instructions-to-install-a-game-server" title="Permalink to this heading"></a></h2>
+<p>To install a supported game:</p>
+<ol class="simple">
+<li><p>Right click Agent Smith’s icon in the system application tray.</p></li>
+<li><p>Select New Game.</p></li>
+<li><p>Chose the game server you wish to install in the dropdown.</p></li>
+<li><p>There will be defaults, but alter any of the installation settings as desired.</p></li>
+<li><p>Click the installation button at the bottom.</p></li>
+</ol>
+</div>
+<div class="section" id="instruction-to-start-stop-an-installation">
+<h2>Instruction to start stop an installation.<a class="headerlink" href="#instruction-to-start-stop-an-installation" title="Permalink to this heading"></a></h2>
+<p>There are two methods to quickly startup a server and shut one down.</p>
+<div class="section" id="using-the-game-manager-windows">
+<h3>Using the Game Manager windows:<a class="headerlink" href="#using-the-game-manager-windows" title="Permalink to this heading"></a></h3>
+<ol class="simple">
+<li><p>Right click Agent Smith’s icon in the system application tray.</p></li>
+<li><p>Select New Game.</p></li>
+<li><p>Chose the game server you wish to manage in the dropdown.</p></li>
+<li><p>On the bottom you can click one of Startup/Shutdown/Restart as needed.</p></li>
+</ol>
+</div>
+<div class="section" id="using-the-quick-action-menu">
+<h3>Using the Quick Action Menu:<a class="headerlink" href="#using-the-quick-action-menu" title="Permalink to this heading"></a></h3>
+<p>Agent Smith allows the user to quickly startup or shutdown a server without going through the Game
+Manager windows.</p>
+<ol class="simple">
+<li><p>Right click Agent Smith’s icon in the system application tray.</p></li>
+<li><p>Hover your cursor over “Quck Action”</p></li>
+<li><p>Click the game server you want to toggle.  If the game server is red, that means its off and clicking
+it will initiate startup.  Conversley if the game server is green, clicking it will shutdown the
+game server.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="instructions-to-modify-a-game-server-s-inputs">
+<h2>Instructions to modify a game server’s inputs.<a class="headerlink" href="#instructions-to-modify-a-game-server-s-inputs" title="Permalink to this heading"></a></h2>
+<p>The definition of an argument in the context of a game server is a mechanism to give the user control
+over either the configuration of the server and/or the game settings itself.</p>
+<p>Agent Smith attempts to generalize some game servers ability to change things like a server port via
+an Arguments Mechanism.  No two game servers are different.</p>
+<p>There are roughtly a few categories:</p>
+<ol class="simple">
+<li><p>Servers that take no argument(s) and instead rely on a file being in a specific location.</p></li>
+<li><p>Servers that take only or a combination of input arguments.</p></li>
+<li><p>Servers have arguments that point to a specific configuration file.</p></li>
+</ol>
+<p>Each game is tailored to whatever method the game devs chose to feed user input into their dedicated
+game server.  However, not everything is exposed or perfectly provided via GUI.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>Vrising - The user game modify a subset of server settings via GUI but not global game settings.
+Instead, the user would need to modify the files on the file system after installation.</p></li>
+<li><p>7DTD - This game server simply points to a file on the file system that the user can manipulate
+after installation.</p></li>
+</ul>
+<p>To modify server arguments expose via GUI that’s done either at installation time, or via the
+Game Manager window when the server is shutdown.</p>
+<p>WARNING:</p>
+<ul class="simple">
+<li><p>Some games servers, like PalWorld for example, require Agent Smith to use a file template that is
+overwritten each time the server is started.  So only through software modification can additional
+inputs be exposed.</p></li>
+</ul>
+</div>
+<div class="section" id="reporting-bugs">
+<h2>Reporting Bugs<a class="headerlink" href="#reporting-bugs" title="Permalink to this heading"></a></h2>
+<p>Things happen, don’t work as expected, and many many more issues.  If it happens to you, then fill
+out the bug template in GitHub <a class="reference external" href="https://github.com/agentsofthesystem/agent-smith/issues/new?assignees=&amp;labels=bug&amp;projects=&amp;template=bug_report.md&amp;title=%5BBUG%5D+%5BGUI%2C+Backend%2C+Client%5D+-+Short+Subject">here</a>.</p>
+<p>Please don’t confuse feature requests with a bug… Thanks in advance!  Ask questions!</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="supported-game-servers.html" class="btn btn-neutral float-left" title="Supported Dedicated Game Servers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="security.html" class="btn btn-neutral float-right" title="Security" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Agents of the System.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
