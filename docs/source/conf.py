@@ -1,3 +1,4 @@
+from recommonmark.parser import CommonMarkParser
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -16,11 +17,18 @@ release = '1.0.0'
 
 extensions = [
     "sphinx.ext.autosectionlabel",
-    "sphinx_rtd_theme"
+    "sphinx_rtd_theme",
+    "recommonmark"
 ]
 
 templates_path = ['_templates']
 exclude_patterns = []
+
+source_parsers = {
+    '.md': CommonMarkParser,
+}
+
+source_suffix = ['.rst', '.md']
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

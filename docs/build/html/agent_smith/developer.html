@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer &mdash; Agents of the System 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Style Guide" href="software-code-quality.html" />
+    <link rel="prev" title="Design" href="design.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Agents of the System
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architect.html">Architect Web App (Web &amp; Mobile)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../agent_smith.html">Agent Smith</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html">Getting Started with Agent Smith</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supported-game-servers.html">Supported Dedicated Game Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html">Agent Smith Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design.html">Design</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Developer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-obvious">The obvious…</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pre-requisites">Pre-requisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#development-workflow">Development Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#development-environment-preparation">Development Environment Preparation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ubuntu-debian-based-linux">Ubuntu/Debian Based Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#docker">Docker</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#development-environment">Development Environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#stand-alone-development">Stand Alone &amp; Development</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#software-testing">Software Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#software-development-process">Software Development Process</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-run-software-tests">How to run software tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#debugging">Debugging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references">References:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="software-code-quality.html">Style Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer-add-game-server.html">Adding a Game Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html">Software Testing &amp; Test Plan</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting Guides</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Agents of the System</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../agent_smith.html">Agent Smith</a></li>
+      <li class="breadcrumb-item active">Developer</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/agent_smith/developer.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="developer">
+<h1>Developer<a class="headerlink" href="#developer" title="Permalink to this heading"></a></h1>
+<p>The following are instructions for developers.</p>
+<div class="section" id="the-obvious">
+<h2>The obvious…<a class="headerlink" href="#the-obvious" title="Permalink to this heading"></a></h2>
+<p>Why oh why did you pick windows!?!? - Well… the author wanted to target windows first because, in truth,
+most people using this tool are likely to be gaming on a windows machine.  The author has tons of linux
+experience and recognizes that Linux/Dockerized platforms are entirely relevant and in the future.</p>
+</div>
+<div class="section" id="pre-requisites">
+<h2>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this heading"></a></h2>
+<p>This software was developed on Windows 10. The chosen software language is Python 3, which can be installed
+on any flavor of Linux or Windows.  However, a python environment is a hard requirement. The author used VSCode to
+develop software, although any IDE may be used which is the preference of the developer.</p>
+<ol class="simple">
+<li><p>Python 3 - (See section about python setup.)</p></li>
+<li><p>VSCode + Python Extension (or other preferred IDE)</p></li>
+<li><p>Steam - On Windows, you must have steam installed!</p></li>
+<li><p>Git</p></li>
+</ol>
+<p>Finally - I’m assuming the reader has some software development experience.  Please don’t make an issue because you
+don’t know how to set something up or use an IDE.  Please do make an issue if these instrutions need updating.  Also,
+feel free to figure out what’s different and make a change yourself ;).</p>
+</div>
+<div class="section" id="development-workflow">
+<h2>Development Workflow<a class="headerlink" href="#development-workflow" title="Permalink to this heading"></a></h2>
+<p>The <a class="reference external" href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">Gitflow Workflow</a>
+is used and is enforced.</p>
+<p>All features get stacked up in the develop branch and then, after testing, released to the main branch.
+GitHub Actions automate DevOps Continuous Integration checks along the way.  On the main branch, however,
+a packaged release of Agent Smith is generated and attached to the release section.</p>
+</div>
+<div class="section" id="development-environment-preparation">
+<h2>Development Environment Preparation<a class="headerlink" href="#development-environment-preparation" title="Permalink to this heading"></a></h2>
+<div class="section" id="ubuntu-debian-based-linux">
+<h3>Ubuntu/Debian Based Linux<a class="headerlink" href="#ubuntu-debian-based-linux" title="Permalink to this heading"></a></h3>
+<p>Please note that development on linux is experimental for now.  In the future, it will be supported
+but not until a later release.  And when that time comes, Ubuntu/Debian will likely be the first
+distro supported.</p>
+<ol class="simple">
+<li><p>sudo apt update</p></li>
+<li><p>sudo apt install python3 python3-venv python3-pip lib32gcc-s1</p></li>
+<li><p>sudo apt install libgl1 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 <br />libxcb-shape0 libxcb-xinerama0 libxcb-xkb1 libxkbcommon-x11-dev</p></li>
+</ol>
+<p>NOTE:</p>
+<ul class="simple">
+<li><p>The final step installs a number of required items for PyQt5 applications.</p></li>
+<li><p>You may develop on Linux but the software hasn’t been built to do both Windows and Linux yet, so don’t build
+something that only works on Linux.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this heading"></a></h2>
+<ol class="simple">
+<li><p>Download python from here: https://www.python.org/downloads/ - Python 3.10+ will do.</p></li>
+<li><p>install to windows.</p></li>
+<li><p>Open a powershell and test that one can run the “python” command to verify python is installed.</p></li>
+<li><p>install git for windows from here: https://git-scm.com/download/win</p></li>
+</ol>
+</div>
+<div class="section" id="docker">
+<h2>Docker<a class="headerlink" href="#docker" title="Permalink to this heading"></a></h2>
+<p>The backend flask server could be containerized and the PyQT GUI could just simply communicate with
+a container, but this has yet to be developed.</p>
+</div>
+</div>
+<div class="section" id="development-environment">
+<h1>Development Environment<a class="headerlink" href="#development-environment" title="Permalink to this heading"></a></h1>
+<div class="section" id="stand-alone-development">
+<h2>Stand Alone &amp; Development<a class="headerlink" href="#stand-alone-development" title="Permalink to this heading"></a></h2>
+<p>One must create a python virtual environment.  Therefore python3 must be present and configured on your machine.</p>
+<ol class="simple">
+<li><p>python3 -m venv venv/</p></li>
+<li><p>Activate the Python environment:</p>
+<ul class="simple">
+<li><p>linux: source venv/bin/activate</p></li>
+<li><p>windows:  .\venv\bin\Activate.ps1</p></li>
+</ul>
+</li>
+<li><p>pip install -U pip</p></li>
+<li><p>pip install -r requirements.txt</p></li>
+<li><p>pip install -r test-requirements.txt</p></li>
+<li><p>Run the backend server: python .\server.py</p></li>
+<li><p>Run the frontend GUI: python .\gui.py</p></li>
+</ol>
+<p>NOTE:</p>
+<ul class="simple">
+<li><p>There is another script (python .\agent-smith.py), and that can be used to run both the backend server and the front
+end GUI simultaneously.  Use this for final testing of features.</p></li>
+<li><p>The backend server operates on port 5000, and the frontend GUI is built to use that port by default.
+That port should never change. Nginx is used to expose ports and that’s where changes are made to
+port numbers.</p></li>
+</ul>
+<p><strong>Warning</strong>: If one is using a windows only environment, the second step where the python virtual environment is activated
+may require a windows policy to be enabled which allows powershell scripts to be run.  This is a windows security
+mechanism.  One need only enable the policy and repeat the step.  <a class="reference external" href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.3">Here is more information</a>
+to set this up properly.</p>
+</div>
+<div class="section" id="software-testing">
+<h2>Software Testing<a class="headerlink" href="#software-testing" title="Permalink to this heading"></a></h2>
+<p>This software uses the coverage and pytest python packages for a testing framework.  All tests are in the “tests” folder,
+and are split up by unit tests and functional tests.  Any unit test is a simple test of a singular function or independent
+object.  A functional or system test would be a test that covers and end-to-end function; eg installing a game server and
+seeing that the game shows up in the quick action menu, for example.</p>
+<p>For more information about testing, <a class="reference internal" href="testing.html"><span class="doc">please read here</span></a></p>
+</div>
+</div>
+<div class="section" id="software-development-process">
+<h1>Software Development Process<a class="headerlink" href="#software-development-process" title="Permalink to this heading"></a></h1>
+<div class="section" id="how-to-run-software-tests">
+<h2>How to run software tests<a class="headerlink" href="#how-to-run-software-tests" title="Permalink to this heading"></a></h2>
+<ol class="simple">
+<li><p>Before code submission run: coverage run -m pytest  (All tests must pass)</p></li>
+<li><p>Create a Pull Request</p></li>
+<li><p>Wait for GitHub actions to run to completion.</p></li>
+</ol>
+</div>
+<div class="section" id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading"></a></h2>
+<p>This section will speak toward using VSCode for debugging.  A launch configuration is a named JSON object that VSCode
+uses to start up a debug session.  There are two relevant to debugging:</p>
+<ol class="simple">
+<li><p>“Python: Server” - Run this to get a debug session for the backend Flask Server</p></li>
+<li><p>“Python: GUI” - Run this to get a debug session for the frontend PyQt GUI.</p></li>
+</ol>
+<p>The user may use one or the other, or both at the same time.</p>
+<p>NOTES:</p>
+<ul class="simple">
+<li><p><strong>DO NOT</strong> use print statements to write variables to the terminal in as opposed to proper debugging and expect
+that to get merged!</p></li>
+<li><p>I’m not going to leave instrutions for which buttons to click on VSCode to use the debugger.</p></li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2>References:<a class="headerlink" href="#references" title="Permalink to this heading"></a></h2>
+<ol class="simple">
+<li><p>https://coverage.readthedocs.io/en/7.3.0/</p></li>
+<li><p>https://git-scm.com/download/win</p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="design.html" class="btn btn-neutral float-left" title="Design" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="software-code-quality.html" class="btn btn-neutral float-right" title="Style Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Agents of the System.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
