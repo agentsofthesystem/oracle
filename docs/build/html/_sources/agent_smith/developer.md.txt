@@ -156,7 +156,7 @@ NOTES:
 
 TODO - Add this section.
 
-## References:
+## References
 
 1. https://coverage.readthedocs.io/en/7.3.0/
 2. https://git-scm.com/download/win
