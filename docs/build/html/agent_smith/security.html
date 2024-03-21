@@ -22,7 +22,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Design" href="design.html" />
-    <link rel="prev" title="Agent Smith Usage" href="usage.html" /> 
+    <link rel="prev" title="User Guide" href="usage.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -49,23 +49,24 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../architect.html">Architect Web App (Web &amp; Mobile)</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../agent_smith.html">Agent Smith</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html">Getting Started with Agent Smith</a></li>
 <li class="toctree-l2"><a class="reference internal" href="supported-game-servers.html">Supported Dedicated Game Servers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html">Agent Smith Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html">User Guide</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Security</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#best-practices">Best Practices</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#home-network-configuration">Home Network Configuration.</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#windows-security">Windows Security</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#windows-defender-warnings">Windows Defender Warnings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#windows-firewall-warnings">Windows Firewall Warnings</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#network-security">Network Security</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#security-with-nginx">Security with Nginx</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="design.html">Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developer.html">Developer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developer.html#development-environment">Development Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developer.html#software-development-process">Software Development Process</a></li>
-<li class="toctree-l2"><a class="reference internal" href="software-code-quality.html">Style Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developer-add-game-server.html">Adding a Game Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer.html">Developer Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="testing.html">Software Testing &amp; Test Plan</a></li>
 </ul>
 </li>
@@ -99,24 +100,6 @@
              
   <div class="section" id="security">
 <h1>Security<a class="headerlink" href="#security" title="Permalink to this heading"></a></h1>
-<p>True story. While playing around with Agent Smith during development, I opened up a port and gave
-it a hostname and left it running.  In the couple of days which I left it running, a bot found it
-and attacked it.  My machine was compromised because I had the software running in debug mode.
-After that I decided to double down on security posture.</p>
-<p>Security with Agent Smith is handled by Nginx and by some specific settings that I’ve made to secure
-the software:</p>
-<ol class="simple">
-<li><p>First and foremost, I’ve disabled debug mode in the <a class="reference external" href="https://github.com/agentsofthesystem/agent-smith/blob/develop/application/config/config.py">configuration object</a>.</p></li>
-<li><p>For the .\agent-smith.py inside of the GUI <a class="reference external" href="https://github.com/agentsofthesystem/agent-smith/blob/develop/application/gui/launch.py">launch.py</a>, debug mode
-is also disabled.  This script is the one that pyinstaller uses to pacakge AgentSmith for release.</p></li>
-<li><p>Also, inside of <a class="reference external" href="https://github.com/agentsofthesystem/agent-smith/blob/develop/application/gui/launch.py">launch.py</a>, the Flask Server is set to only allow
-connections from the localhost, or 127.0.0.1.</p></li>
-<li><p>Nginx handles all incoming connections.  Check out the “Security with Nginx” section below.</p></li>
-<li><p>I’ve removed all software from AgentSmith that might be used to run any executable.  That way,
-if something was downloaded to your machine, AgentSmith won’t be the mechanism that runs it.</p></li>
-</ol>
-<p>All of that in mind, there is no reason why exposing a home server to the open internet cannot be done
-safely.  Keep in mind that no matter what, your IP will be probed and tested no matter what is done.</p>
 <div class="section" id="best-practices">
 <h2>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this heading"></a></h2>
 <p>For those of us that like to tinker and change things, please watch out for the following:</p>
@@ -146,6 +129,53 @@ never hurt!</p></li>
 </ol>
 </div>
 </div>
+<div class="section" id="windows-security">
+<h2>Windows Security<a class="headerlink" href="#windows-security" title="Permalink to this heading"></a></h2>
+<div class="section" id="windows-defender-warnings">
+<h3>Windows Defender Warnings<a class="headerlink" href="#windows-defender-warnings" title="Permalink to this heading"></a></h3>
+<p>Developer creating applications are expected to “digitally sign” executable files so that Windows
+won’t flag it as a potential threat.  However, to sign an executable one has to purchase an expensive
+signing authority and until that expense can be covered, somehow, this warning will continue to happen.
+The author’s opinion is that it’s sad that Windows forces you to pay or makes your software look like
+a threat.  At some point in the future, the goal is to do so due to lack of options.</p>
+<p>Also - Pyinstaller, as great as it is for packaging legitimate python apps in an exe bundle is a fan
+favorite of nefarious people.  As a result, Windows Defender may at time flag this legitimate
+software as malware. You will have to go back into windows defender and tell it to allow the
+executable on your machine.</p>
+</div>
+<div class="section" id="windows-firewall-warnings">
+<h3>Windows Firewall Warnings<a class="headerlink" href="#windows-firewall-warnings" title="Permalink to this heading"></a></h3>
+<p>The user ought to expect that windows will attmpet to block all external communications to Agent
+Smithas a rule. This is frustrating but a good thing.  The user ought only allow Agent Smith’s
+reverse proxy server, Nginx, through the firewall.  Nginx is intended to take external connections.
+The author advises against exposing the “agent-smith.exe” executable to the outside world because
+it has a port intended to serve for development access, which Nginx reverse proxies to.  That’s the
+port which should be guarded at all times!</p>
+<p>If the reader needs instructions about how to manage <a class="reference external" href="./usage.html#windows-firewall">Windows Firewall</a>
+please read that section.</p>
+</div>
+</div>
+<div class="section" id="network-security">
+<h2>Network Security<a class="headerlink" href="#network-security" title="Permalink to this heading"></a></h2>
+<p>True story. While playing around with Agent Smith during development, I opened up a port and gave
+it a hostname and left it running.  In the couple of days which I left it running, a bot found it
+and attacked it.  My machine was compromised because I had the software running in debug mode.
+After that I decided to double down on security posture.</p>
+<p>Security with Agent Smith is handled by Nginx and by some specific settings that I’ve made to secure
+the software:</p>
+<ol class="simple">
+<li><p>First and foremost, I’ve disabled debug mode in the <a class="reference external" href="https://github.com/agentsofthesystem/agent-smith/blob/develop/application/config/config.py">configuration object</a>.</p></li>
+<li><p>For the .\agent-smith.py inside of the GUI <a class="reference external" href="https://github.com/agentsofthesystem/agent-smith/blob/develop/application/gui/launch.py">launch.py</a>, debug mode
+is also disabled.  This script is the one that pyinstaller uses to pacakge AgentSmith for release.</p></li>
+<li><p>Also, inside of <a class="reference external" href="https://github.com/agentsofthesystem/agent-smith/blob/develop/application/gui/launch.py">launch.py</a>, the Flask Server is set to only allow
+connections from the localhost, or 127.0.0.1.</p></li>
+<li><p>Nginx handles all incoming connections.  Check out the “Security with Nginx” section below.</p></li>
+<li><p>I’ve removed all software from AgentSmith that might be used to run any executable.  That way,
+if something was downloaded to your machine, AgentSmith won’t be the mechanism that runs it.</p></li>
+</ol>
+<p>All of that in mind, there is no reason why exposing a home server to the open internet cannot be done
+safely.  Keep in mind that no matter what, your IP will be probed and tested no matter what is done.</p>
+</div>
 <div class="section" id="security-with-nginx">
 <h2>Security with Nginx<a class="headerlink" href="#security-with-nginx" title="Permalink to this heading"></a></h2>
 <p>First and formost, Nginx is a piece of software that functions as a Reverse Proxy.  That means it
@@ -174,7 +204,7 @@ improvement!</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="usage.html" class="btn btn-neutral float-left" title="Agent Smith Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="usage.html" class="btn btn-neutral float-left" title="User Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="design.html" class="btn btn-neutral float-right" title="Design" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

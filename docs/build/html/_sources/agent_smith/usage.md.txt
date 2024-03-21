@@ -1,4 +1,4 @@
-# Agent Smith Usage
+# User Guide
 
 The area of documention seeks to inform the end user the basics for using Agent Smith, and is not
 intended for a developer.
@@ -33,18 +33,10 @@ Right clicking the icon reveals the menu.
 
 ### A word about Windows.
 
-## Security Warnings
+For security concerns and warnings regarding windows, please read the [Windows Security](./security.html#windows-security)
+section.
 
-Developer creating applications are expected to "digitally sign" executable files so that Windows
-won't flag it as a potential threat.  However, to sign an executable one has to purchase an expensive
-signing authority and until that expense can be covered, somehow, this warning will continue to happen.
-The author's opinion is that it's sad that Windows forces you to pay or makes your software look like
-a threat.  At some point in the future, the goal is to do so due to lack of options.
-
-Also - Pyinstaller, as great as it is for packaging legitimate python apps in an exe bundle is a fan
-favorite of nefarious people.  As a result, Windows Defender may at time flag this legitimate
-software as malware. You will have to go back into windows defender and tell it to allow the
-executable on your machine.
+All instructions were written with Windows 10 & 11 in mind,
 
 ## Files and Folders Agent Smith Creates
 

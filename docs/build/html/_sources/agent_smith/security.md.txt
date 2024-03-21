@@ -1,25 +1,5 @@
 # Security
 
-True story. While playing around with Agent Smith during development, I opened up a port and gave
-it a hostname and left it running.  In the couple of days which I left it running, a bot found it
-and attacked it.  My machine was compromised because I had the software running in debug mode.
-After that I decided to double down on security posture.
-
-Security with Agent Smith is handled by Nginx and by some specific settings that I've made to secure
-the software:
-
-1. First and foremost, I've disabled debug mode in the [configuration object](https://github.com/agentsofthesystem/agent-smith/blob/develop/application/config/config.py).
-2. For the .\agent-smith.py inside of the GUI [launch.py](https://github.com/agentsofthesystem/agent-smith/blob/develop/application/gui/launch.py), debug mode
-   is also disabled.  This script is the one that pyinstaller uses to pacakge AgentSmith for release.
-3. Also, inside of [launch.py](https://github.com/agentsofthesystem/agent-smith/blob/develop/application/gui/launch.py), the Flask Server is set to only allow
-   connections from the localhost, or 127.0.0.1.
-4. Nginx handles all incoming connections.  Check out the "Security with Nginx" section below.
-5. I've removed all software from AgentSmith that might be used to run any executable.  That way,
-   if something was downloaded to your machine, AgentSmith won't be the mechanism that runs it.
-
-All of that in mind, there is no reason why exposing a home server to the open internet cannot be done
-safely.  Keep in mind that no matter what, your IP will be probed and tested no matter what is done.
-
 ## Best Practices
 
 For those of us that like to tinker and change things, please watch out for the following:
@@ -47,6 +27,55 @@ that might help:
    hosting Agent Smith instead of any and all on your network.
 3. If you have the ability to run an "Intrusion Protection System" then do it.  An extra set of eyes
    never hurt!
+
+## Windows Security
+
+### Windows Defender Warnings
+
+Developer creating applications are expected to "digitally sign" executable files so that Windows
+won't flag it as a potential threat.  However, to sign an executable one has to purchase an expensive
+signing authority and until that expense can be covered, somehow, this warning will continue to happen.
+The author's opinion is that it's sad that Windows forces you to pay or makes your software look like
+a threat.  At some point in the future, the goal is to do so due to lack of options.
+
+Also - Pyinstaller, as great as it is for packaging legitimate python apps in an exe bundle is a fan
+favorite of nefarious people.  As a result, Windows Defender may at time flag this legitimate
+software as malware. You will have to go back into windows defender and tell it to allow the
+executable on your machine.
+
+### Windows Firewall Warnings
+
+The user ought to expect that windows will attmpet to block all external communications to Agent
+Smithas a rule. This is frustrating but a good thing.  The user ought only allow Agent Smith's
+reverse proxy server, Nginx, through the firewall.  Nginx is intended to take external connections.
+The author advises against exposing the "agent-smith.exe" executable to the outside world because
+it has a port intended to serve for development access, which Nginx reverse proxies to.  That's the
+port which should be guarded at all times!
+
+If the reader needs instructions about how to manage [Windows Firewall](./usage.html#windows-firewall)
+please read that section.
+
+## Network Security
+
+True story. While playing around with Agent Smith during development, I opened up a port and gave
+it a hostname and left it running.  In the couple of days which I left it running, a bot found it
+and attacked it.  My machine was compromised because I had the software running in debug mode.
+After that I decided to double down on security posture.
+
+Security with Agent Smith is handled by Nginx and by some specific settings that I've made to secure
+the software:
+
+1. First and foremost, I've disabled debug mode in the [configuration object](https://github.com/agentsofthesystem/agent-smith/blob/develop/application/config/config.py).
+2. For the .\agent-smith.py inside of the GUI [launch.py](https://github.com/agentsofthesystem/agent-smith/blob/develop/application/gui/launch.py), debug mode
+   is also disabled.  This script is the one that pyinstaller uses to pacakge AgentSmith for release.
+3. Also, inside of [launch.py](https://github.com/agentsofthesystem/agent-smith/blob/develop/application/gui/launch.py), the Flask Server is set to only allow
+   connections from the localhost, or 127.0.0.1.
+4. Nginx handles all incoming connections.  Check out the "Security with Nginx" section below.
+5. I've removed all software from AgentSmith that might be used to run any executable.  That way,
+   if something was downloaded to your machine, AgentSmith won't be the mechanism that runs it.
+
+All of that in mind, there is no reason why exposing a home server to the open internet cannot be done
+safely.  Keep in mind that no matter what, your IP will be probed and tested no matter what is done.
 
 ## Security with Nginx
 
