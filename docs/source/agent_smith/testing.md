@@ -3,7 +3,7 @@
 Testing an application is imperative as it grows because as new features and fixes are introduced,
 the potential for creating more issues than get solved increases.
 
-## Test Plan
+## Software Test Plan
 
 The goal is to first, implement unit testing and then system testing with the PyQt GUI.  In the end,
 all testing (or as much as possible) should become a part of CI/CD checks.

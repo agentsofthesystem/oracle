@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agent Smith Usage &mdash; Agents of the System 1.0.0 documentation</title>
+  <title>User Guide &mdash; Agents of the System 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
 
@@ -49,15 +49,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../architect.html">Architect Web App (Web &amp; Mobile)</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../agent_smith.html">Agent Smith</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html">Getting Started with Agent Smith</a></li>
 <li class="toctree-l2"><a class="reference internal" href="supported-game-servers.html">Supported Dedicated Game Servers</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Agent Smith Usage</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">User Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#where-to-get-the-software">Where to get the software.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#how-to-launch-the-software">How to launch the software.</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#a-word-about-windows">A word about Windows.</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#security-warnings">Security Warnings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#files-and-folders-agent-smith-creates">Files and Folders Agent Smith Creates</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#nginx-info">Nginx Info</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sqlite-database-info">SQLite Database Info</a></li>
@@ -76,11 +74,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="design.html">Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developer.html">Developer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developer.html#development-environment">Development Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developer.html#software-development-process">Software Development Process</a></li>
-<li class="toctree-l2"><a class="reference internal" href="software-code-quality.html">Style Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developer-add-game-server.html">Adding a Game Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer.html">Developer Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="testing.html">Software Testing &amp; Test Plan</a></li>
 </ul>
 </li>
@@ -102,7 +96,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../agent_smith.html">Agent Smith</a></li>
-      <li class="breadcrumb-item active">Agent Smith Usage</li>
+      <li class="breadcrumb-item active">User Guide</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/agent_smith/usage.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -112,8 +106,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="agent-smith-usage">
-<h1>Agent Smith Usage<a class="headerlink" href="#agent-smith-usage" title="Permalink to this heading"></a></h1>
+  <div class="section" id="user-guide">
+<h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this heading"></a></h1>
 <p>The area of documention seeks to inform the end user the basics for using Agent Smith, and is not
 intended for a developer.</p>
 <div class="section" id="where-to-get-the-software">
@@ -140,19 +134,10 @@ it.</p>
 Right clicking the icon reveals the menu.</p>
 <div class="section" id="a-word-about-windows">
 <h3>A word about Windows.<a class="headerlink" href="#a-word-about-windows" title="Permalink to this heading"></a></h3>
+<p>For security concerns and warnings regarding windows, please read the <a class="reference external" href="./security.html#windows-security">Windows Security</a>
+section.</p>
+<p>All instructions were written with Windows 10 &amp; 11 in mind,</p>
 </div>
-</div>
-<div class="section" id="security-warnings">
-<h2>Security Warnings<a class="headerlink" href="#security-warnings" title="Permalink to this heading"></a></h2>
-<p>Developer creating applications are expected to “digitally sign” executable files so that Windows
-won’t flag it as a potential threat.  However, to sign an executable one has to purchase an expensive
-signing authority and until that expense can be covered, somehow, this warning will continue to happen.
-The author’s opinion is that it’s sad that Windows forces you to pay or makes your software look like
-a threat.  At some point in the future, the goal is to do so due to lack of options.</p>
-<p>Also - Pyinstaller, as great as it is for packaging legitimate python apps in an exe bundle is a fan
-favorite of nefarious people.  As a result, Windows Defender may at time flag this legitimate
-software as malware. You will have to go back into windows defender and tell it to allow the
-executable on your machine.</p>
 </div>
 <div class="section" id="files-and-folders-agent-smith-creates">
 <h2>Files and Folders Agent Smith Creates<a class="headerlink" href="#files-and-folders-agent-smith-creates" title="Permalink to this heading"></a></h2>

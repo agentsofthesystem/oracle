@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Developer &mdash; Agents of the System 1.0.0 documentation</title>
+  <title>Developer Guide &mdash; Agents of the System 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
 
@@ -21,7 +21,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Style Guide" href="software-code-quality.html" />
+    <link rel="next" title="Software Testing &amp; Test Plan" href="testing.html" />
     <link rel="prev" title="Design" href="design.html" /> 
 </head>
 
@@ -49,13 +49,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../architect.html">Architect Web App (Web &amp; Mobile)</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../agent_smith.html">Agent Smith</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html">Getting Started with Agent Smith</a></li>
 <li class="toctree-l2"><a class="reference internal" href="supported-game-servers.html">Supported Dedicated Game Servers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage.html">Agent Smith Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html">User Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="design.html">Design</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Developer</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#the-obvious">The obvious…</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Developer Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction-to-development">Introduction to Development</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pre-requisites">Pre-requisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#development-workflow">Development Workflow</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#development-environment-preparation">Development Environment Preparation</a><ul>
@@ -64,21 +63,27 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#windows">Windows</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#docker">Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#development-environment-setup">Development Environment Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#stand-alone-development">Stand Alone &amp; Development</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#development-environment">Development Environment</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#stand-alone-development">Stand Alone &amp; Development</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#style-guide">Style Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#style-guide-introduction">Style Guide Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#software-documenation">Software Documenation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#software-typing-type-hints">Software Typing / Type Hints</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#formatting">Formatting</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#software-testing">Software Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#software-development-process">Software Development Process</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-run-software-tests">How to run software tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#debugging">Debugging</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#software-development-process">Software Development Process</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#how-to-run-software-tests">How to run software tests</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#debugging">Debugging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-a-new-dediated-game-server">Adding a new Dediated Game Server</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#references">References:</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="software-code-quality.html">Style Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developer-add-game-server.html">Adding a Game Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="testing.html">Software Testing &amp; Test Plan</a></li>
 </ul>
 </li>
@@ -100,7 +105,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../agent_smith.html">Agent Smith</a></li>
-      <li class="breadcrumb-item active">Developer</li>
+      <li class="breadcrumb-item active">Developer Guide</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/agent_smith/developer.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -110,11 +115,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="developer">
-<h1>Developer<a class="headerlink" href="#developer" title="Permalink to this heading"></a></h1>
+  <div class="section" id="developer-guide">
+<h1>Developer Guide<a class="headerlink" href="#developer-guide" title="Permalink to this heading"></a></h1>
 <p>The following are instructions for developers.</p>
-<div class="section" id="the-obvious">
-<h2>The obvious…<a class="headerlink" href="#the-obvious" title="Permalink to this heading"></a></h2>
+<div class="section" id="introduction-to-development">
+<h2>Introduction to Development<a class="headerlink" href="#introduction-to-development" title="Permalink to this heading"></a></h2>
 <p>Why oh why did you pick windows!?!? - Well… the author wanted to target windows first because, in truth,
 most people using this tool are likely to be gaming on a windows machine.  The author has tons of linux
 experience and recognizes that Linux/Dockerized platforms are entirely relevant and in the future.</p>
@@ -176,11 +181,10 @@ something that only works on Linux.</p></li>
 <p>The backend flask server could be containerized and the PyQT GUI could just simply communicate with
 a container, but this has yet to be developed.</p>
 </div>
-</div>
-<div class="section" id="development-environment">
-<h1>Development Environment<a class="headerlink" href="#development-environment" title="Permalink to this heading"></a></h1>
+<div class="section" id="development-environment-setup">
+<h2>Development Environment Setup<a class="headerlink" href="#development-environment-setup" title="Permalink to this heading"></a></h2>
 <div class="section" id="stand-alone-development">
-<h2>Stand Alone &amp; Development<a class="headerlink" href="#stand-alone-development" title="Permalink to this heading"></a></h2>
+<h3>Stand Alone &amp; Development<a class="headerlink" href="#stand-alone-development" title="Permalink to this heading"></a></h3>
 <p>One must create a python virtual environment.  Therefore python3 must be present and configured on your machine.</p>
 <ol class="simple">
 <li><p>python3 -m venv venv/</p></li>
@@ -209,6 +213,33 @@ may require a windows policy to be enabled which allows powershell scripts to be
 mechanism.  One need only enable the policy and repeat the step.  <a class="reference external" href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.3">Here is more information</a>
 to set this up properly.</p>
 </div>
+</div>
+<div class="section" id="style-guide">
+<h2>Style Guide<a class="headerlink" href="#style-guide" title="Permalink to this heading"></a></h2>
+<div class="section" id="style-guide-introduction">
+<h3>Style Guide Introduction<a class="headerlink" href="#style-guide-introduction" title="Permalink to this heading"></a></h3>
+<p>This is a loose guide to how the python code should look at a minimum.  The author of this software recognizes that
+nothing is perfect, so all code should move toward better styling, documentation, typing (etc..) over time.  Not away
+from it and get worse.  Therefore, not all code will immediately look this way, but will get better and better over time.</p>
+</div>
+<div class="section" id="software-documenation">
+<h3>Software Documenation<a class="headerlink" href="#software-documenation" title="Permalink to this heading"></a></h3>
+<p>All files, classes and methods should have pydocstyle type comments.  The goal is to autodoc the software in
+this documentation and achieve that over time.</p>
+</div>
+<div class="section" id="software-typing-type-hints">
+<h3>Software Typing / Type Hints<a class="headerlink" href="#software-typing-type-hints" title="Permalink to this heading"></a></h3>
+<p>The PEP 484 standard for typing shall be followed and strived for; https://peps.python.org/pep-0484/.</p>
+<p>This applies to function signatures, class attributes, and where ever it makes sense.</p>
+</div>
+<div class="section" id="formatting">
+<h3>Formatting<a class="headerlink" href="#formatting" title="Permalink to this heading"></a></h3>
+<p>In general, to take away people arguing this vs that for formatting of code, all formatting will be done by the “black”
+python package.  It’s not perfect but it’s consistent which is the goal.</p>
+<p>Before each commit simply tyep “black .” and all source code will be re-formatted.</p>
+<p>For more information, check out black’s ReadTheDocs here; https://black.readthedocs.io/en/stable/index.html.</p>
+</div>
+</div>
 <div class="section" id="software-testing">
 <h2>Software Testing<a class="headerlink" href="#software-testing" title="Permalink to this heading"></a></h2>
 <p>This software uses the coverage and pytest python packages for a testing framework.  All tests are in the “tests” folder,
@@ -217,11 +248,10 @@ object.  A functional or system test would be a test that covers and end-to-end 
 seeing that the game shows up in the quick action menu, for example.</p>
 <p>For more information about testing, <a class="reference internal" href="testing.html"><span class="doc">please read here</span></a></p>
 </div>
-</div>
 <div class="section" id="software-development-process">
-<h1>Software Development Process<a class="headerlink" href="#software-development-process" title="Permalink to this heading"></a></h1>
+<h2>Software Development Process<a class="headerlink" href="#software-development-process" title="Permalink to this heading"></a></h2>
 <div class="section" id="how-to-run-software-tests">
-<h2>How to run software tests<a class="headerlink" href="#how-to-run-software-tests" title="Permalink to this heading"></a></h2>
+<h3>How to run software tests<a class="headerlink" href="#how-to-run-software-tests" title="Permalink to this heading"></a></h3>
 <ol class="simple">
 <li><p>Before code submission run: coverage run -m pytest  (All tests must pass)</p></li>
 <li><p>Create a Pull Request</p></li>
@@ -229,7 +259,7 @@ seeing that the game shows up in the quick action menu, for example.</p>
 </ol>
 </div>
 <div class="section" id="debugging">
-<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading"></a></h2>
+<h3>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading"></a></h3>
 <p>This section will speak toward using VSCode for debugging.  A launch configuration is a named JSON object that VSCode
 uses to start up a debug session.  There are two relevant to debugging:</p>
 <ol class="simple">
@@ -243,6 +273,11 @@ uses to start up a debug session.  There are two relevant to debugging:</p>
 that to get merged!</p></li>
 <li><p>I’m not going to leave instrutions for which buttons to click on VSCode to use the debugger.</p></li>
 </ul>
+</div>
+</div>
+<div class="section" id="adding-a-new-dediated-game-server">
+<h2>Adding a new Dediated Game Server<a class="headerlink" href="#adding-a-new-dediated-game-server" title="Permalink to this heading"></a></h2>
+<p>TODO - Add this section.</p>
 </div>
 <div class="section" id="references">
 <h2>References:<a class="headerlink" href="#references" title="Permalink to this heading"></a></h2>
@@ -258,7 +293,7 @@ that to get merged!</p></li>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="design.html" class="btn btn-neutral float-left" title="Design" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="software-code-quality.html" class="btn btn-neutral float-right" title="Style Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="testing.html" class="btn btn-neutral float-right" title="Software Testing &amp; Test Plan" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
