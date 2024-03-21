@@ -1,7 +1,7 @@
 
-# Developer Guide
+# Agent Smith Developer Guide
 
-The following are instructions for developers.
+The following are instructions for developers of Agent Smith.
 
 ## Introduction to Development
 
@@ -51,17 +51,12 @@ NOTE:
    - You may develop on Linux but the software hasn't been built to do both Windows and Linux yet, so don't build
      something that only works on Linux.
 
-## Windows
+### Windows
 
 1. Download python from here: https://www.python.org/downloads/ - Python 3.10+ will do.
 2. install to windows.
 3. Open a powershell and test that one can run the "python" command to verify python is installed.
 4. install git for windows from here: https://git-scm.com/download/win
-
-## Docker
-
-The backend flask server could be containerized and the PyQT GUI could just simply communicate with
-a container, but this has yet to be developed.
 
 ## Development Environment Setup
 
@@ -91,72 +86,7 @@ may require a windows policy to be enabled which allows powershell scripts to be
 mechanism.  One need only enable the policy and repeat the step.  [Here is more information](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.3)
 to set this up properly.
 
-## Style Guide
 
-### Style Guide Introduction
-
-This is a loose guide to how the python code should look at a minimum.  The author of this software recognizes that
-nothing is perfect, so all code should move toward better styling, documentation, typing (etc..) over time.  Not away
-from it and get worse.  Therefore, not all code will immediately look this way, but will get better and better over time.
-
-### Software Documenation
-
-All files, classes and methods should have pydocstyle type comments.  The goal is to autodoc the software in
-this documentation and achieve that over time.
-
-### Software Typing / Type Hints
-
-The PEP 484 standard for typing shall be followed and strived for; https://peps.python.org/pep-0484/.
-
-This applies to function signatures, class attributes, and where ever it makes sense.
-
-### Formatting
-
-In general, to take away people arguing this vs that for formatting of code, all formatting will be done by the "black"
-python package.  It's not perfect but it's consistent which is the goal.
-
-Before each commit simply tyep "black ." and all source code will be re-formatted.
-
-For more information, check out black's ReadTheDocs here; https://black.readthedocs.io/en/stable/index.html.
-
-
-## Software Testing
-
-This software uses the coverage and pytest python packages for a testing framework.  All tests are in the "tests" folder,
-and are split up by unit tests and functional tests.  Any unit test is a simple test of a singular function or independent
-object.  A functional or system test would be a test that covers and end-to-end function; eg installing a game server and
-seeing that the game shows up in the quick action menu, for example.
-
-For more information about testing, [please read here](./testing.md)
-
-## Software Development Process
-
-### How to run software tests
-
-1. Before code submission run: coverage run -m pytest  (All tests must pass)
-2. Create a Pull Request
-3. Wait for GitHub actions to run to completion.
-
-### Debugging
-
-This section will speak toward using VSCode for debugging.  A launch configuration is a named JSON object that VSCode
-uses to start up a debug session.  There are two relevant to debugging:
-
-1. "Python: Server" - Run this to get a debug session for the backend Flask Server
-2. "Python: GUI" - Run this to get a debug session for the frontend PyQt GUI.
-
-The user may use one or the other, or both at the same time.
-
-NOTES:
-   - **DO NOT** use print statements to write variables to the terminal in as opposed to proper debugging and expect
-     that to get merged!
-   - I'm not going to leave instrutions for which buttons to click on VSCode to use the debugger.
-
-## Adding a new Dediated Game Server
+## Adding a new Dedicated Game Server
 
 TODO - Add this section.
-
-## References
-
-1. https://coverage.readthedocs.io/en/7.3.0/
-2. https://git-scm.com/download/win

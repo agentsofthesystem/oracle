@@ -8,4 +8,5 @@ Agents Of The System
    getting_started
    architect
    agent_smith
+   developer
    troubleshooting

@@ -9,5 +9,4 @@ Agent Smith
    agent_smith/usage
    agent_smith/security
    agent_smith/design
-   agent_smith/developer
    agent_smith/testing
