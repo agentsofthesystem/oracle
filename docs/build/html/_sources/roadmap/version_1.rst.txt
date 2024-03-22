@@ -27,5 +27,3 @@ The following are releases that make up the first version collection from each r
 
 1. Operator: `<https://github.com/agentsofthesystem/operator/releases/tag/v1.0.0>`_
 2. Agent Smith: `<https://github.com/agentsofthesystem/agent-smith/releases/tag/v1.0.0>`_
-3. Architect: TBD
-4. Oracle: TBD
