@@ -13,15 +13,15 @@ To me, the absolute bare minimum was enough to:
 This first version really is bare bones with no real automation of tasks.  Those automation features
 are planned for the second release.
 
-Development Board
-*****************
+Alpha Development Board
+***********************
 
 One might call this an "alpha" version, so that is what the board is called.
 
 Have a look here: `<https://github.com/orgs/agentsofthesystem/projects/1>`_
 
-Release List
-************
+Alpha Release List
+******************
 
 The following are releases that make up the first version collection from each repository:
 

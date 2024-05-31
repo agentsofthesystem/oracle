@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to use Agents &mdash; Agents of the System 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Agent &amp; Server Monitoring" href="monitors.html" />
+    <link rel="prev" title="How Subscriptions Work" href="subscriptions.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Agents of the System
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../architect.html">Architect Web App (Web &amp; Mobile)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html">User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subscriptions.html">How Subscriptions Work</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">How to use Agents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-sharing-works-with-agents">How sharing works with Agents.</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#groups-vs-friends">Groups vs Friends.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#counting-users">Counting Users</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#the-agent-information-page">The Agent Information Page</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agent-details">Agent Details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#platform-information">Platform Information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agent-top-level-controls">Agent Top Level Controls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agent-server-monitoring-controls-reporting">Agent &amp; Server Monitoring Controls &amp; Reporting.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dedicated-server-controls-status">Dedicated Server Controls &amp; Status.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agent-activity-logs">Agent Activity Logs.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="monitors.html">Agent &amp; Server Monitoring</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../agent_smith.html">Agent Smith</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer.html">Developer Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Agents of the System</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../architect.html">Architect Web App (Web &amp; Mobile)</a></li>
+      <li class="breadcrumb-item active">How to use Agents</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/architect/agents.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="how-to-use-agents">
+<h1>How to use Agents<a class="headerlink" href="#how-to-use-agents" title="Permalink to this heading"></a></h1>
+<p>This section assumes that the reader has added at least one agent to the system for use.</p>
+<ul class="simple">
+<li><p>Open a browser and navigate to the <a class="reference external" href="https://agentsofthesystem.com/app/system/agents">Agents</a> page.</p></li>
+</ul>
+<p>There will be a list of agents.  From here, the user may do perform some functions:</p>
+<ol class="simple">
+<li><p>Update the agent information, such as changing the hostname.</p></li>
+<li><p>Share the agent with a group or friend(s) directly.</p></li>
+<li><p>Delete the agent.</p></li>
+</ol>
+<p>The user will see two types of agents on the list;  Agents which are owned which have a black icon, and
+green agents which are shared to the user by another user.</p>
+<div class="section" id="how-sharing-works-with-agents">
+<h2>How sharing works with Agents.<a class="headerlink" href="#how-sharing-works-with-agents" title="Permalink to this heading"></a></h2>
+<p>The owner has the ability to share agents with groups and/or friends, and that
+comes with some considerations.  Only the agent owner may manage the agent.</p>
+<div class="section" id="groups-vs-friends">
+<h3>Groups vs Friends.<a class="headerlink" href="#groups-vs-friends" title="Permalink to this heading"></a></h3>
+<p>The agent owner may share a group with some users already in it, share an empty
+group and later add user to said group, or share with individual friends directly.</p>
+<p>Sharing directly to friends trumps sharing to a group.  In the instance where an agent
+is shared to a group with a friend inside it that also has direct shared access, then unsharing
+the group will not result in eliminating access for that friend.  The agent owner would have
+to also remove the direct friend access.   This is most useful when you have a permanent friend
+in mind and groups and/or group members change often.</p>
+</div>
+<div class="section" id="counting-users">
+<h3>Counting Users<a class="headerlink" href="#counting-users" title="Permalink to this heading"></a></h3>
+<p>Agent sharing counts the unique users between Groups and Friends.  Not
+including the agent owner.</p>
+<p>Example, let’s say Agent X has been shared with Group A.  This Group A
+has Friend 1 and Friend 2 inside it.  Group A also has the group owner
+inside of it, and the group has a total of 3 members.   However, the share
+count is 2 because sharing doesn’t count the agent owner.</p>
+<p>Let’s say also, in addition to the group, the agent is shared directly with Friend 2.
+The share count remains at 2 because the unique non-owner user count remains to.</p>
+<p>Next, you share directly with Friend 3 that is not in Group A.  The share count goes
+up to 3 because this is a third unique user.</p>
+</div>
+</div>
+<div class="section" id="the-agent-information-page">
+<h2>The Agent Information Page<a class="headerlink" href="#the-agent-information-page" title="Permalink to this heading"></a></h2>
+<p>The agent information page is the primary controls location for managing agents.  There are several sections:</p>
+<ol class="simple">
+<li><p>Agent Details - Name, hostname, etc..</p></li>
+<li><p>Platform Information - CPU, Memory, etc…</p></li>
+<li><p>Agent Top Level Controls.</p></li>
+<li><p>Agent &amp; Server Monitoring Controls &amp; Reporting.</p></li>
+<li><p>Dedicated Server Controls &amp; Status.</p></li>
+<li><p>Agent Activity Logs.</p></li>
+</ol>
+<p>There may be more as this software evolves.</p>
+<div class="section" id="agent-details">
+<h3>Agent Details<a class="headerlink" href="#agent-details" title="Permalink to this heading"></a></h3>
+<p>This is a summary section repeating to the user what agent is being displayed.  This is the name, hostname, owner,
+share counts, etc…</p>
+<p>This information is static and only updates if the user refreshes the page.</p>
+</div>
+<div class="section" id="platform-information">
+<h3>Platform Information<a class="headerlink" href="#platform-information" title="Permalink to this heading"></a></h3>
+<p>The left hand side bar shows platform information about the agent.  Some of the information is OS Type, CPU info,
+Memory Info, etc…</p>
+<p>This information is static and only updates if the user refreshes or updates the page.</p>
+</div>
+<div class="section" id="agent-top-level-controls">
+<h3>Agent Top Level Controls<a class="headerlink" href="#agent-top-level-controls" title="Permalink to this heading"></a></h3>
+<p>Top level agent-wide controls go with the top-right green button.  The button itself says “Update”.  Clicking this
+button will allow the user to refresh the information on the page without reloading the page in their web browser.</p>
+<p>Next to the “Update” button is a drop down menu with 3 dots.  This is the menu, which contains:</p>
+<ol class="simple">
+<li><p>Agent Membership: Clicking this button will show the membership section, which in turn shows the groups and friends
+the agent is shared with.  This is where the user has the option to remove groups or friends, respectively.</p></li>
+</ol>
+</div>
+<div class="section" id="agent-server-monitoring-controls-reporting">
+<h3>Agent &amp; Server Monitoring Controls &amp; Reporting.<a class="headerlink" href="#agent-server-monitoring-controls-reporting" title="Permalink to this heading"></a></h3>
+<p>The monitoring section shows a drop down. The default is the “Agent Health” Monitor.  This is the section where users
+may enable monitors and configure them.  The dropdown allows the user to switch between the monitor types.</p>
+<p>Use of Agent &amp; Server Monitors deserves its own section, so please navigate to the <a class="reference external" href="./monitors.html#agent-server-monitoring">Section on Monitors</a>
+for that information.</p>
+</div>
+<div class="section" id="dedicated-server-controls-status">
+<h3>Dedicated Server Controls &amp; Status.<a class="headerlink" href="#dedicated-server-controls-status" title="Permalink to this heading"></a></h3>
+<p>A table of all installed dedicated servers appears.  It will show the following:</p>
+<ul class="simple">
+<li><p>Game Server Name.</p></li>
+<li><p>Last Time the server was updated.</p></li>
+<li><p>The build id of the server.</p></li>
+<li><p>The build branch of the server.</p></li>
+<li><p>Server Status.</p></li>
+<li><p>Manual Actions.</p></li>
+</ul>
+<div class="section" id="server-statuses">
+<h4>Server Statuses<a class="headerlink" href="#server-statuses" title="Permalink to this heading"></a></h4>
+<p>Server status show what the state of the dedicate server on the agent is.  The status are:</p>
+<ol class="simple">
+<li><p>Shutdown - Yellow - Meaning the user has intentionally shut down the server.</p></li>
+<li><p>Online - Green - Meaning the user has intentionally started the server and it is verified to be running.</p></li>
+<li><p>Offline - Red - Meaning the serer is not running when it should be.</p></li>
+</ol>
+</div>
+<div class="section" id="manual-actions">
+<h4>Manual Actions<a class="headerlink" href="#manual-actions" title="Permalink to this heading"></a></h4>
+<p>The user may also, for each server, take some manual actions:</p>
+<ol class="simple">
+<li><p>Startup Server - The user may command the server to startup.</p></li>
+<li><p>Update Server - The user may command the agent to update the server software. This only appears if the server
+is not currently running.</p></li>
+<li><p>Shutdown Server - The user may command the server to shutdown.</p></li>
+<li><p>Restart Server - The user may command the server to shutdown and then start back up.  This only appears if
+the server is currently running.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="agent-activity-logs">
+<h3>Agent Activity Logs.<a class="headerlink" href="#agent-activity-logs" title="Permalink to this heading"></a></h3>
+<p>When sharing management duties with different people, knowing who did what and when is useful for governance.  On the
+agent information page, the most recent 3 activity logs appear.  The user may click “View All” to see everything that is
+currently happening.</p>
+<p>Additionally, when viewing all logs the owner has the option to clear out the logs.  Only the agent owner may
+clear out log history.</p>
+<p>Logs may also show automated events that have happened, in which case there is no user that took the action.  The difference
+between the two is made clear.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="subscriptions.html" class="btn btn-neutral float-left" title="How Subscriptions Work" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="monitors.html" class="btn btn-neutral float-right" title="Agent &amp; Server Monitoring" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Agents of the System.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

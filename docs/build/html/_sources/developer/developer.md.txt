@@ -89,4 +89,4 @@ to set this up properly.
 
 ## Adding a new Dedicated Game Server
 
-TODO - Add this section.
+When developers in the communicty begin expressing an interest in doing this, then the author will complete this section.

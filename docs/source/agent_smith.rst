@@ -5,6 +5,7 @@ Agent Smith
    :maxdepth: 2
    :caption: Contents:
 
+   agent_smith/intro
    agent_smith/supported-game-servers
    agent_smith/usage
    agent_smith/security

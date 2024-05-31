@@ -1,4 +1,12 @@
 Architect Web App (Web & Mobile)
 ================================
 
-TEST 1 2 3
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   architect/intro
+   architect/usage
+   architect/subscriptions
+   architect/agents
+   architect/monitors
