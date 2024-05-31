@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How Subscriptions Work &mdash; Agents of the System 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to use Agents" href="agents.html" />
+    <link rel="prev" title="User Guide" href="usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Agents of the System
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../architect.html">Architect Web App (Web &amp; Mobile)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html">User Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">How Subscriptions Work</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subscribing">Subscribing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-subscribe">How to subscribe</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#unsubscribing">Unsubscribing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-un-subscribe">How to un-subscribe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#what-happens-when-user-un-subscribes">What happens when user un-subscribes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#subscription-features">Subscription Features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#maximum-number-of-agents">Maximum number of Agents.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dedicated-server-limits">Dedicated Server Limits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agent-share-limits">Agent Share Limits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#activity-logs">Activity Logs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#manual-controls">Manual Controls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#email-alerts">Email Alerts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#discord">Discord</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agent-server-monitors">Agent &amp; Server Monitors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="agents.html">How to use Agents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitors.html">Agent &amp; Server Monitoring</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../agent_smith.html">Agent Smith</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer.html">Developer Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Agents of the System</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../architect.html">Architect Web App (Web &amp; Mobile)</a></li>
+      <li class="breadcrumb-item active">How Subscriptions Work</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/architect/subscriptions.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="how-subscriptions-work">
+<h1>How Subscriptions Work<a class="headerlink" href="#how-subscriptions-work" title="Permalink to this heading"></a></h1>
+<p>This section will explain the differences between unpaid and paid subscriptions for the architect.</p>
+<p>Please visit the pricing table on the <a class="reference external" href="https://agentsofthesystem.com/pricing">Agents of The System</a> for
+a quick reference.</p>
+<div class="section" id="subscribing">
+<h2>Subscribing<a class="headerlink" href="#subscribing" title="Permalink to this heading"></a></h2>
+<p>Getting a red-pill subscription entitles the user to the extended privileges defined in the pricing table.</p>
+<div class="section" id="how-to-subscribe">
+<h3>How to subscribe<a class="headerlink" href="#how-to-subscribe" title="Permalink to this heading"></a></h3>
+<p>Head over to the <a class="reference external" href="https://agentsofthesystem.com/pricing">Accounts</a> page and select the “Billing” tab.
+Once on the tab, click “Subsribe”.</p>
+<p>The user is taken to a stripe encrypted portal where payment information is provided.  After finishing
+the user’s information is taken, payment made, and you are returned back to the Accounts page.</p>
+</div>
+</div>
+<div class="section" id="unsubscribing">
+<h2>Unsubscribing<a class="headerlink" href="#unsubscribing" title="Permalink to this heading"></a></h2>
+<div class="section" id="how-to-un-subscribe">
+<h3>How to un-subscribe<a class="headerlink" href="#how-to-un-subscribe" title="Permalink to this heading"></a></h3>
+<p>Head over to the <a class="reference external" href="https://agentsofthesystem.com/pricing">Accounts</a> page and select the “Billing” tab, and then
+click on “Customer Portal”. The user is taken to a stripe encrypted portal where details about the current
+subscription is kept.  Click the “Cancel Plan” button.  You will need to confirm the action.</p>
+<p>Keep in mind, cancelling does not immediately revert the user back to Blue Pill status.  If there is time left
+in the billing period, you still get that because it has already been paid for.  Once the end of the billing
+period is reached, the system will automatically update and revert the user.</p>
+</div>
+<div class="section" id="what-happens-when-user-un-subscribes">
+<h3>What happens when user un-subscribes<a class="headerlink" href="#what-happens-when-user-un-subscribes" title="Permalink to this heading"></a></h3>
+<p>A number of different things happen when a user unsubscribes.  The Architect is still usable but it reverts itself
+back to the Blue Pill status and privileges every free user gets.</p>
+<p>The following happens when the subscription ends:</p>
+<ol class="simple">
+<li><p>All agents except for one are marked inactive.  The user can only delete them or re-active the agent if the
+subscription is later resumed.</p></li>
+<li><p>All previous shares across all of your agents are removed.  Don’t worry, you can add them back but at the
+free tier limits.</p></li>
+<li><p>All monitors are disabled and any existing faults for them are deleted.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="subscription-features">
+<h2>Subscription Features<a class="headerlink" href="#subscription-features" title="Permalink to this heading"></a></h2>
+<p>The following describes in detail each subscription feature from the pricing page.</p>
+<div class="section" id="maximum-number-of-agents">
+<h3>Maximum number of Agents.<a class="headerlink" href="#maximum-number-of-agents" title="Permalink to this heading"></a></h3>
+<p>Without a subscription, the user may only have a single agent that is owned.  This doesn’t necessarily mean only
+one agent will appear.  Other agents may appear if shared from another account.</p>
+<p>With a subscription, this limit is increased to 6.</p>
+<p>A limit is placed even with a subscription to discourage mis-use of this tool.  If the agent limit was not present
+then, in theory, someone might add hundreds or thousands of agents and mis-use the tool.</p>
+</div>
+<div class="section" id="dedicated-server-limits">
+<h3>Dedicated Server Limits<a class="headerlink" href="#dedicated-server-limits" title="Permalink to this heading"></a></h3>
+<p>Without a subscription, when viewing the agent information page, only a single dedicated server will appear in
+the server table.</p>
+<p>When subscribed, an unlimited number of servers are allowed.</p>
+<p>Keep in mind, however, if you try to run a large number of servers on your own hardware that might prove
+over taxing.</p>
+</div>
+<div class="section" id="agent-share-limits">
+<h3>Agent Share Limits<a class="headerlink" href="#agent-share-limits" title="Permalink to this heading"></a></h3>
+<p>Without a subscription, agents may only be shared out to a maximum of 2 unique users across a group or individual
+friend memberships.</p>
+<p>When subscribed, this limit is increased to 10.</p>
+</div>
+<div class="section" id="activity-logs">
+<h3>Activity Logs<a class="headerlink" href="#activity-logs" title="Permalink to this heading"></a></h3>
+<p>Without a subscription, the user may only see the last 3 activity logs for a given agent.</p>
+<p>With a subscription, the user will have access to everything!</p>
+</div>
+<div class="section" id="manual-controls">
+<h3>Manual Controls<a class="headerlink" href="#manual-controls" title="Permalink to this heading"></a></h3>
+<p>With or without a subscription users will have the ability to manually control dedicated servers visible in
+the agent information page.</p>
+</div>
+<div class="section" id="email-alerts">
+<h3>Email Alerts<a class="headerlink" href="#email-alerts" title="Permalink to this heading"></a></h3>
+<p>With or without a subscription users will receive email alerts and notifications for a given pre-programmed
+event.</p>
+</div>
+<div class="section" id="discord">
+<h3>Discord<a class="headerlink" href="#discord" title="Permalink to this heading"></a></h3>
+<p>Everyone gets to come see us on our Discord! Come by and say hello!</p>
+</div>
+<div class="section" id="agent-server-monitors">
+<h3>Agent &amp; Server Monitors<a class="headerlink" href="#agent-server-monitors" title="Permalink to this heading"></a></h3>
+<p>Only paying users get access to automation features, so agent and dedicated server monitors are only for
+subscribed users.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="usage.html" class="btn btn-neutral float-left" title="User Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="agents.html" class="btn btn-neutral float-right" title="How to use Agents" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Agents of the System.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

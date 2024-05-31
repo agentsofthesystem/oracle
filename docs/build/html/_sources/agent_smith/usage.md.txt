@@ -1,6 +1,6 @@
 # User Guide
 
-The area of documention seeks to inform the end user the basics for using Agent Smith, and is not
+The area of documentation seeks to inform the end user the basics for using Agent Smith, and is not
 intended for a developer.
 
 ## Where to get the software.
@@ -146,7 +146,7 @@ There are roughtly a few categories:
 2. Servers that take only or a combination of input arguments.
 3. Servers have arguments that point to a specific configuration file.
 
-Each game is tailored to whatever method the game devs chose to feed user input into their dedicated
+Each game is tailored to whatever method the game developers chose to feed user input into their dedicated
 game server.  However, not everything is exposed or perfectly provided via GUI.
 
 Examples:

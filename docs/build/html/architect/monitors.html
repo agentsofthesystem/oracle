@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agent &amp; Server Monitoring &mdash; Agents of the System 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Agent Smith" href="../agent_smith.html" />
+    <link rel="prev" title="How to use Agents" href="agents.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Agents of the System
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../architect.html">Architect Web App (Web &amp; Mobile)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html">User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subscriptions.html">How Subscriptions Work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agents.html">How to use Agents</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Agent &amp; Server Monitoring</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-are-monitors">What are Monitors?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#available-monitor-types">Available Monitor Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agent-health-monitoring">Agent Health Monitoring</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dedicated-server-health-monitoring">Dedicated Server Health Monitoring</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dedicated-server-update-monitoring">Dedicated Server Update Monitoring</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#common-features">Common Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#more-about-monitor-faults">More about Monitor Faults</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../agent_smith.html">Agent Smith</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer.html">Developer Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Agents of the System</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../architect.html">Architect Web App (Web &amp; Mobile)</a></li>
+      <li class="breadcrumb-item active">Agent &amp; Server Monitoring</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/architect/monitors.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="agent-server-monitoring">
+<h1>Agent &amp; Server Monitoring<a class="headerlink" href="#agent-server-monitoring" title="Permalink to this heading"></a></h1>
+<p>This section covers all things related to Agent and Dedicated Server Monitoring.</p>
+<div class="section" id="what-are-monitors">
+<h2>What are Monitors?<a class="headerlink" href="#what-are-monitors" title="Permalink to this heading"></a></h2>
+<p>In the context of The Architect, monitors are automated regularly occurring tasks to keep an eye
+on your agents and servers.</p>
+</div>
+<div class="section" id="available-monitor-types">
+<h2>Available Monitor Types<a class="headerlink" href="#available-monitor-types" title="Permalink to this heading"></a></h2>
+<p>There are three types of monitors and each one does something slightly different.  They all share the common
+features detailed in that section, but some also have additional settings.</p>
+<p>The three monitor types are:</p>
+<ol class="simple">
+<li><p>Agent Health Monitoring</p></li>
+<li><p>Dedicated Server Health Monitoring</p></li>
+<li><p>Dedicated Server Update Monitoring</p></li>
+</ol>
+<div class="section" id="agent-health-monitoring">
+<h3>Agent Health Monitoring<a class="headerlink" href="#agent-health-monitoring" title="Permalink to this heading"></a></h3>
+<p>The agent health monitor will regularly perform a pulse check on the agent.  If the agent reports an unhealthy
+status back to the monitor, then the monitor will create a fault and shut itself down.  The reason for this is
+because the entire agent is unreachable or offline.  The agent owner will have to manually get the agent back
+online to re-establish a connection.   Once this is done, the user may clear the fault and restart the monitor.</p>
+</div>
+<div class="section" id="dedicated-server-health-monitoring">
+<h3>Dedicated Server Health Monitoring<a class="headerlink" href="#dedicated-server-health-monitoring" title="Permalink to this heading"></a></h3>
+<p>Dedicated Server Health Monitoring is much like the agent health monitor, but it’s specifically interested in the
+individual servers running on the agent.  In terms of server health, the check focuses on servers actually being
+online when the user expects them to be.  The monitor ignores server which the user has deliberately shutdown.  This
+results in checking that the agent can tell whether or not the server is online, which is the responsibility of the
+agent to determine.  More simply put, Agent Smith will seek to detect that the server executable can be found on the
+host machine.</p>
+<p>In the event a server is found to be offline when it should be online, then a fault is generated.  This however, does
+not result in the monitor shutting itself down.  This is because it must continue to monitor other dedicate servers. In
+this situation, the fault is an alert for the user to clear after fixing the server.</p>
+<p>There is a unique setting to this monitor type.  The user may opt to enable a feature where the monitor will attempt to
+auto restart a monitor that is found to be offline when it should be online.  The attempt will only be made once and a
+fault is still generated so the user knows the attempt was made.</p>
+<p>This monitor is also able to detect if the agent itself is entirely offline, much like the Agent Health Monitor, and will
+shut itself down in this instance only.</p>
+</div>
+<div class="section" id="dedicated-server-update-monitoring">
+<h3>Dedicated Server Update Monitoring<a class="headerlink" href="#dedicated-server-update-monitoring" title="Permalink to this heading"></a></h3>
+<p>Dedicated Server Update Monitoring is similar to the Health monitoring but is focused solely on updates. Agent Smith has the
+ability to detect when a newer version of the dedicated server is available for download, and this monitor simply queries the agent
+for this information.  The update check is done regardless of whether or not a server is online or offline.</p>
+<p>In the event a server is found to be in need of an update, then a fault is generated. This however, does
+not result in the monitor shutting itself down.  This is because it must continue to monitor other dedicate servers for updates.
+In this situation, the fault is an alert for the user to clear after updating the server.</p>
+<p>There are two unique settings which can be made for this monitor type:</p>
+<ol class="simple">
+<li><p>Auto Update: The user may have the monitor attempt to update the server automatically.</p></li>
+<li><p>The final server state: The user may designate whether the monitor should leave the server online, offline, or in the state
+which it was found.  This option only matters when the auto update feature is enabled.</p></li>
+</ol>
+<p>Finally, when the automatic update feature is enabled, the monitor will not just update the server immediately.  That might
+potentially disrupt players.  Instead, a the agent owner sets a maintenance hour in their user preferences.  The maintenance
+hour is set in the time zone which is also set in preferences.  If the maintenance hours is 12AM midnight, then updates may
+only occur automatically between the hour 12AM to 1AM.  When the agent detects for the first time that a server requires an
+update, the time may be outside of the maintenance window.  In this case, when alerts are enabled, a notification is given
+to all users that it is going to update the server.  Later when the maintenance window comes around, that server will be updated
+and again users are updated that this happened.</p>
+<p>This monitor is also able to detect if the agent itself is entirely offline, much like the Agent Health Monitor, and will
+shut itself down in this instance only.</p>
+</div>
+</div>
+<div class="section" id="common-features">
+<h2>Common Features<a class="headerlink" href="#common-features" title="Permalink to this heading"></a></h2>
+<p>All monitors have an on/off switch, and a settings menu.  The settings menu is only visible if the agent is running.
+Otherwise it is not.</p>
+<p>The common features on the settings menu among monitors are:</p>
+<ol class="simple">
+<li><p>Polling Interval - The user may select 15, 30, or 60 minutes.  This option dicates how often a monitor will perform
+a check.</p></li>
+<li><p>Enable Alerts - This is an on/off option.  When on, monitors will send out an alert whenever a fault is detected.</p></li>
+</ol>
+</div>
+<div class="section" id="more-about-monitor-faults">
+<h2>More about Monitor Faults<a class="headerlink" href="#more-about-monitor-faults" title="Permalink to this heading"></a></h2>
+<p>Monitor faults appear on the agent information page in the monitor section.  The user can click an ‘x’ button to clear them.
+Faults also come with alerts to the user if a given monitor has alerts enabled.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="agents.html" class="btn btn-neutral float-left" title="How to use Agents" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../agent_smith.html" class="btn btn-neutral float-right" title="Agent Smith" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Agents of the System.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
