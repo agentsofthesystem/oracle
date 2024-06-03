@@ -1,4 +1,4 @@
-# Introduction
+# Agent Smith - Introduction
 
 Agent Smith is a computer application which runs in the system tray of your computer.  For Windows, that is the
 bottom right.  The application is a PyQt Graphical User Interface (GUI) with a server backend which is capable of

@@ -1,9 +1,9 @@
-# User Guide
+# The Architect - User Guide
 
 The area of documentation seeks to inform the end user the basics for using The Architect, and is not
 intended for a developer.
 
-## Where to get the software.
+## Website Information.
 
 There is no download for using The Architect, you will use a web browser to access the tool:
 

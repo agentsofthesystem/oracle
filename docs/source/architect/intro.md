@@ -1,4 +1,4 @@
-# Introduction
+# The Architect - Introduction
 
 The Architect is cloud software running at [agentsofthesystem.com](https://agentsofthesystem.com), and it's primary
 purpose is to colocate friend groups and their dedicated servers into one application.  Users attach Agent Smith

@@ -1,4 +1,4 @@
-# User Guide
+# Agent Smith - User Guide
 
 The area of documentation seeks to inform the end user the basics for using Agent Smith, and is not
 intended for a developer.
